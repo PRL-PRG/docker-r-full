@@ -15,7 +15,7 @@ RUN dpkg -i /rcheckserver_2.15-54_amd64.deb; \
 # Debian 8 comes with old R, we need to upgrade to 3.4
 RUN echo "deb http://cloud.r-project.org/bin/linux/debian jessie-cran34/" >> /etc/apt/sources.list && \
     DEBIAN_FRONTEND=noninteractive apt-get -yq update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -yq upgrade
+    DEBIAN_FRONTEND=noninteractive apt-get -yq --force-yes upgrade
 
 # run the package installation
 ARG CRAN_CONTRIB_URL="https://cloud.r-project.org/src/contrib"
