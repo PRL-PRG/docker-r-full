@@ -3,7 +3,7 @@
 This is a docker image based on Debian 8 jessie that contains R 3.4 with most of
 the available package from CRAN repository. The native library dependencies were
 installed using the
-[`rcheckserver`])(http://statmath.wu.ac.at/AASC/debian/rcheckserver_2.15-54_amd64.deb)
+[`rcheckserver`](http://statmath.wu.ac.at/AASC/debian/rcheckserver_2.15-54_amd64.deb)
 version 2.15-54.
 
 ## Buidling
