@@ -29,11 +29,12 @@ message("INSTALL: # of packages to be installed: ", length(packages))
 
 curr <- 0
 N <- length(packages)
+lib_dir <- .libPaths()[1]
+
 for (pkg in packages) {
-    installed <- installed.packages()[, 1]
     curr <- curr + 1
 
-    if (pkg %in% installed) {
+    if (dir.exists(file.path(lib_dir, pkg))) {
         message("INSTALL: ", pkg, " - already installed (", curr, "/", N, ")")
     } else {
         message("INSTALL: ", pkg, " - installing (", curr, "/", N, ")")
@@ -46,4 +47,4 @@ for (pkg in packages) {
     }
 }
 
-message("INSTALL: # of installed packages: ", length(installed.packages()))
+message("INSTALL: # of installed packages: ", nrow(installed.packages()))

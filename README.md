@@ -1,10 +1,32 @@
 # r-full
 
-This is a docker image based on Debian 8 jessie that contains R 3.4 with most of
-the available package from CRAN repository. The native library dependencies were
-installed using the
-[`rcheckserver`](http://statmath.wu.ac.at/AASC/debian/rcheckserver_2.15-54_amd64.deb)
-version 2.15-54.
+This is a docker image based on [docker-r-full-base](https://github.com/PRL-PRG/docker-r-full-base) 
+containing almost all CRAN packages (all but the ones withe dependencies on tcltk2).
+
+## Usage
+
+```sh
+$ docker run -ti --rm prlprg/r-full
+
+R version 3.4.0 (2017-04-21) -- "You Stupid Darkness"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> nrow(installed.packages())
+[1] 10345
+```
 
 ## Buidling
 
