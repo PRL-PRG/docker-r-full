@@ -5,6 +5,8 @@ containing almost all CRAN packages (all but the ones withe dependencies on tclt
 
 ## Usage
 
+chooseCRANmirror(); getOption("repos")
+
 ```sh
 $ docker run -ti --rm prlprg/r-full
 

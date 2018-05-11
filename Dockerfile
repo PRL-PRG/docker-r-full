@@ -1,15 +1,11 @@
 FROM prlprg/r-full-base
 
 # run the package installation
-ARG CRAN_CONTRIB_URL="https://cloud.r-project.org/src/contrib"
-ARG IGNORED_PACKAGES=""
+ARG REPO="https://cloud.r-project.org"
+ARG PACKAGES="available.packages()[,1]"
+ARG INSTALL_ARSG=", destdir=/CRAN, INSTALL_opts=c('--example', '--install-tests', '--with-keep.source', '--no-multiarch')"
 
-ADD install-cran-packages.R /
-RUN chmod +x /install-cran-packages.R
-
-ENV CRAN_CONTRIB_URL=${CRAN_CONTRIB_URL}
-ENV IGNORE_PACKAGES=${IGNORED_PACKAGES}
-RUN /install-cran-packages.R
+RUN Rscript -e "install.packages($PACKAGES, repos='$REPO' $INSTALL_ARGS)" > /install.log 2>&1
 
 LABEL maintainer "krikava@gmail.com"
 
