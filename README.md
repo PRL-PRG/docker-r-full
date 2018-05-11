@@ -1,4 +1,4 @@
-# r-full
+# r-full-cran
 
 This is a docker image based on [docker-r-full-base](https://github.com/PRL-PRG/docker-r-full-base) 
 containing almost all CRAN packages (all but the ones withe dependencies on tcltk2).
