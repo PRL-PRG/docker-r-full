@@ -34,7 +34,7 @@ Type 'q()' to quit R.
 
 ```sh
 $ cd docker-r-full-cran
-$ docker build --rm --build-arg REPO="http://mirrors.nic.cz/R/src/contrib" -t prlprg/r-full-cran .
+$ docker build --rm --build-arg REPO="http://mirrors.nic.cz/R" -t prlprg/r-full-cran .
 ```
 
 There are the following build arguments:
